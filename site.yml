@@ -10,9 +10,10 @@
       apt: name=sysstat state=present
     - name: install htop
       apt: name=htop state=present
-    - name: install nginx
-      apt: name=nginx state=present
+
     - name: install mysql
       apt: name=mysql-server state=present
+    - name: install php5-mysql
+      apt: name=php5-mysql state=present
     - name: install php
-      apt: name=php5 state=present
+      apt: name=php5-fpm state=present
