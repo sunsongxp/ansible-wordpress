@@ -1,0 +1,18 @@
+---
+- hosts: all
+  sudo: true
+  roles:
+    - common
+  tasks:
+    - name: update apt cache
+      apt: update_cache=yes
+    - name: install sysstat
+      apt: name=sysstat state=present
+    - name: install htop
+      apt: name=htop state=present
+    - name: install nginx
+      apt: name=nginx state=present
+    - name: install mysql
+      apt: name=mysql-server state=present
+    - name: install php
+      apt: name=php5 state=present
