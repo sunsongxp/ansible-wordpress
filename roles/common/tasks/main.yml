@@ -1,3 +1,6 @@
 ---
 - name: Copy sources.list
   copy: src=sources.list dest=/etc/apt/sources.list
+
+- name: update apt cache
+  apt: update_cache=yes

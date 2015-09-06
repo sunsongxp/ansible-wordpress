@@ -3,17 +3,13 @@
   sudo: true
   roles:
     - common
+    - mysql
+    - nginx
+    - php-fpm
+    - wordpress
+
   tasks:
-    - name: update apt cache
-      apt: update_cache=yes
     - name: install sysstat
       apt: name=sysstat state=present
     - name: install htop
       apt: name=htop state=present
-
-    - name: install mysql
-      apt: name=mysql-server state=present
-    - name: install php5-mysql
-      apt: name=php5-mysql state=present
-    - name: install php
-      apt: name=php5-fpm state=present
