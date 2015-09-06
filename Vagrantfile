@@ -119,4 +119,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # chef-validator, unless you changed the configuration.
   #
   #   chef.validation_client_name = "ORGNAME-validator"
+  config.vm.network "forwarded_port", guest: 80, host: 8000
+  config.vm.provision :ansible do |ansible|
+    ansible.playbook = "playbook.yml"
+  end
 end
