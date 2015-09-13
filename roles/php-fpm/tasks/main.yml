@@ -9,3 +9,11 @@
 - name: Copy php5-fpm configuration
   template: src=wordpress.conf dest=/etc/php5/fpm/pool.d/wordpress.conf
   notify: restart php5-fpm
+
+- name: change post_max_size in php.ini configuration
+  ini_file: dest=/etc/php5/fpm/php.ini section=PHP option=post_max_size value=100M
+  notify: restart php5-fpm
+
+- name: change upload_max_filesize in php.ini configuration
+  ini_file: dest=/etc/php5/fpm/php.ini section=PHP option=upload_max_filesize value=100M
+  notify: restart php5-fpm

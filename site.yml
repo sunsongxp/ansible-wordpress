@@ -13,6 +13,8 @@
       apt: name=sysstat state=present
     - name: install htop
       apt: name=htop state=present
+    - name: install iftop
+      apt: name=iftop state=present
     - name: Add user ubuntu
       user: name=ubuntu groups="sudo" home=/home/ubuntu
     - name: add authorized_key
