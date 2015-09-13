@@ -13,3 +13,8 @@
       apt: name=sysstat state=present
     - name: install htop
       apt: name=htop state=present
+    - name: Add user ubuntu
+      user: name=ubuntu groups="sudo" home=/home/ubuntu
+    - name: add authorized_key
+      authorized_key: user=ubuntu
+                      key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
